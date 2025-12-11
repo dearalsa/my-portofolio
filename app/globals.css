@@ -22,5 +22,129 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif; 
+}
+
+.hello-h {
+  font-family: var(--font-greatvibes);
+  font-size: 250px;
+  color: #E88B8F;
+  -webkit-text-stroke: 1px black;
+  display: inline-block;
+  transform: translateY(-35px);
+  margin-right: 20px;
+}
+
+.hello-rest {
+  font-family: var(--font-trykker);
+  font-size: 160px;
+  color: #E88B8F;
+  -webkit-text-stroke: 1px black;
+  display: inline-block;
+  transform: translateY(-35px);
+}
+
+.btn-im {
+  position: absolute;
+  background-color: #FFE5E5;
+  color: black;
+  top: 165px;
+  left: 180px;
+  z-index: 10;
+  transform: translateX(-100%);
+  font-family: var(--font-tenorsans);
+}
+
+.btn-name {
+  position: absolute;
+  background-color: #FFE5E5;
+  color: black;
+  right: 20px;
+  top: 230px;
+  z-index: 10;
+  font-family: var(--font-tenorsans);
+}
+
+.hello-desc {
+  margin-top: -65px;
+  font-family: var(--font-poppins);
+  color: #090909ff;
+}
+
+.ribbon-img {
+  position: absolute;
+  width: 210px;
+  height: auto;
+  top: -85px;
+  left: 5px;
+  transform: translateX(-50%);
+  z-index: 15;
+}
+
+@media (max-width: 768px) {
+  .hello-h {
+    font-size: 170px !important;
+  }
+  .hello-rest {
+    font-size: 110px !important;
+  }
+  .btn-im {
+    top: 130px !important;
+    left: 150px !important;
+  }
+  .btn-name {
+    top: 200px !important;
+    right: 10px !important;
+  }
+  .hello-desc {
+    margin-top: -40px !important;
+    font-size: 16px !important;
+  }
+  .ribbon-img {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top: -85px;
+    left: 5px;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
+}
+
+@media (max-width: 480px) {
+  .hello-h {
+    font-size: 100px !important;
+    margin-right: 10px !important;
+    transform: translateY(-60px);
+  }
+  .hello-rest {
+    font-size: 85px !important;
+    transform: translateY(-60px);
+  }
+  .btn-im {
+    top: 18px !important;
+    left: 92px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+  }
+  .btn-name {
+    top: 45px !important;
+    right: 15px !important;
+    font-size: 14px !important;
+    padding: 6px 30px !important;
+  }
+  .hello-desc {
+    margin-top: -50px !important;
+    font-size: 15px !important;
+    padding: 0 15px;
+  }
+  .ribbon-img {
+    position: absolute;
+    width: 130px;
+    height: auto;
+    top: -190px;
+    left: 70px;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
 }

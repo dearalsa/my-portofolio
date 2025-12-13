@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { name: 'Home', href: '/', hoverColor: '#AB4E52' },
-  { name: 'About Me', href: '/about', hoverColor: '#78373C' },
-  { name: 'Experience', href: '/experience', hoverColor: '#955251' },
-  { name: 'Projects', href: '/projects', hoverColor: '#683939' },
-  { name: 'Contact', href: '/contact', hoverColor: '#955251'},
+  { name: 'Home', href: '#home', hoverColor: '#AB4E52' },
+  { name: 'About Me', href: '#about', hoverColor: '#78373C' },
+  { name: 'Experience', href: '#experience', hoverColor: '#955251' },
+  { name: 'Projects', href: '#projects', hoverColor: '#683939' },
+  { name: 'Contact', href: '#contact', hoverColor: '#955251'},
 ];
 
 export default function Navbar() { 
@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden z-20" style={{ backgroundColor: '#FFF5F7' }}>
+      <div className="sticky top-0 w-full z-50" style={{ backgroundColor: '#FFF5F7' }}>
         <div className="relative h-[150px] md:h-[100px] lg:h-[130px]">
           {/* desktop svg */}
           <img
@@ -42,19 +42,19 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       className="text-lg lg:text-2xl -mt-2 transition-colors duration-200"
-                      style={{ color: '#ffffffff' }}
+                      style={{ color: '#FFF5F7' }}
                       onMouseEnter={(e) => e.currentTarget.style.color = link.hoverColor}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#ffffffff'}
+                      onMouseLeave={(e) => e.currentTarget.style.color = '#FFF5F7'}
                     >
                       {link.name}
                     </a>
                   ))}
                 </div>
                 <button
-                className="md:hidden z-[60] p-2 rounded-md absolute left-4 top-2"
-                style={{ color: '#3A3332' }}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
+                  className="md:hidden z-[60] p-2 rounded-md absolute left-4 top-2"
+                  style={{ color: '#3A3332' }}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
                   {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
                 </button>
               </div>

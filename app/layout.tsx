@@ -37,7 +37,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} ${greatVibes.variable} ${trykker.variable} ${TenorSans.variable}`}>
         <Navbar /> 
-        {children}
+        {children}  
       </body>
     </html >
   );

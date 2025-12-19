@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const certificates = [
   {
@@ -53,7 +55,7 @@ const certificates = [
   {
     title: 'Belajar Dasar Structured Query Language (SQL)',
     image: '/certificate/BelajarDasarStructuredQueryLanguage(SQL).jpg',
-    pdfFile: '/certificate/BelajarDasarStructuredQueryLanguage(SQL).pdf',  
+    pdfFile: '/certificate/BelajarDasarStructuredQueryLanguage(SQL).pdf',
   },
   {
     title: 'Belajar Dasar Data Science',
@@ -61,8 +63,8 @@ const certificates = [
     pdfFile: '/certificate/BelajarDasarDataScience.pdf',
   },
   {
-    title: 'Belajar Dasar Cloud dan Gen AI di AWS',       
-    image: '/certificate/BelajarDasarClouddanGenAIdiAWS.jpg',   
+    title: 'Belajar Dasar Cloud dan Gen AI di AWS',
+    image: '/certificate/BelajarDasarClouddanGenAIdiAWS.jpg',
     pdfFile: '/certificate/BelajarDasarClouddanGenAIdiAWS.pdf',
   },
   {
@@ -133,47 +135,66 @@ export default function ExperienceSection() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-5xl mx-auto">
-        {certificates.map((item, index) => (
-          <div key={index} className="flex flex-col">
-            {/* CARD */}
-            <div className="relative border-2 border-black rounded-lg p-4 bg-transparent overflow-hidden w-full">
-              {!loaded[index] && (
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-white">
-                  <div className="h-10 w-10 animate-spin rounded-full border-4 border-gray-300 border-t-gray-900" />
-                  <p className="text-sm text-gray-600">Loading...</p>
+        {certificates.map((item, index) => {
+          const controls = useAnimation();
+          const [ref, inView] = useInView({ threshold: 0.3 });
+
+          useEffect(() => {
+            if (inView) {
+              controls.start({ opacity: 1, y: 0 });
+            } else {
+              controls.start({ opacity: 0, y: 40 });
+            }
+          }, [inView, controls]);
+
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              initial={{ opacity: 0, y: 40 }}
+              animate={controls}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="flex flex-col"
+            >
+              <div className="relative border-2 border-black rounded-lg p-4 bg-transparent overflow-hidden w-full">
+                {!loaded[index] && (
+                  <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-white">
+                    <div className="h-10 w-10 animate-spin rounded-full border-4 border-gray-300 border-t-gray-900" />
+                    <p className="text-sm text-gray-600">Loading...</p>
+                  </div>
+                )}
+
+                <div className="relative w-full aspect-[4/3]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-contain"
+                    onLoadingComplete={() =>
+                      setLoaded(prev => ({ ...prev, [index]: true }))
+                    }
+                  />
                 </div>
-              )}
-
-              <div className="relative w-full aspect-[4/3]">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-contain"
-                  onLoadingComplete={() =>
-                    setLoaded(prev => ({ ...prev, [index]: true }))
-                  }
-                />
               </div>
-            </div>
 
-            {/* LINK POJOK KANAN */}
-            <div className="mt-4 w-full flex justify-end">
-              <a
-                href={item.pdfFile}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 text-sm tracking-wide text-black hover:underline"
-              >
-                SHOW CERTIFICATE
-                <ArrowUpRight
-                  size={16}
-                  className="translate-y-0.5 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </a>
-            </div>
-          </div>
-        ))}
+              {/* bagian yang mengarahkan ke pdf */}
+              <div className="mt-4 w-full flex justify-end">
+                <a
+                  href={item.pdfFile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 text-sm tracking-wide text-black hover:underline"
+                >
+                  SHOW CERTIFICATE
+                  <ArrowUpRight
+                    size={16}
+                    className="translate-y-0.5 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </a>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

@@ -28,6 +28,11 @@ const Cooper = localFont({
   variable: '--font-cooper',
 });
 
+const Architects = localFont({
+  src: './fonts/Architects.ttf',
+  variable: '--font-architects',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -35,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} ${greatVibes.variable} ${trykker.variable} ${TenorSans.variable}`}>
+      <body className={`${poppins.className} ${greatVibes.variable} ${trykker.variable} ${TenorSans.variable} ${Architects.variable} ${Cooper.variable}`}>
         <Navbar /> 
         {children}  
       </body>

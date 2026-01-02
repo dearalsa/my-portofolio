@@ -1,9 +1,3 @@
-Siap 👍
-Ini versi **bahasa Inggris full**, **rapi**, dan **lebih profesional** (cocok untuk portfolio + recruiter). Tinggal **copy–paste** ke README.md kamu.
-
----
-
-````md
 <h1 align="center">My Portfolio</h1>
 
 <p align="center">

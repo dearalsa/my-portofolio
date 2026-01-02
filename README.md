@@ -12,8 +12,7 @@
 
 ## 📌 About the Project
 
-**My Portfolio** is a personal website designed to present my work, technical skills, and background in a clean and professional way.  
-The goal of this project is to serve as a personal branding platform and a central place where visitors can explore my projects and get in touch with me.
+**My Portfolio** is a personal website designed to present my work, technical skills, and background in a clean and professional way. The goal of this project is to serve as a personal branding platform and a central place where visitors can explore my projects and get in touch with me.
 
 This portfolio is built with a focus on:
 - Clean and modern UI

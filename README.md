@@ -1,60 +1,54 @@
 <h1 align="center">My Portfolio</h1>
 
 <p align="center">
-  Personal portfolio website to showcase projects, skills, and experience.
+  A modern personal portfolio website built to showcase my projects, skills, and experience as a web developer.
 </p>
 
 <p align="center">
-  🔗 Live Demo: https://my-portofolio-xi-lime.vercel.app/
+  🌐 Live Demo: https://my-portofolio-xi-lime.vercel.app/
 </p>
 
 ---
 
-## 📌 About Project
+## 📌 About the Project
 
-**My Portfolio** adalah website portfolio pribadi yang dibuat untuk menampilkan:
+**My Portfolio** is a personal website designed to present my work, technical skills, and background in a clean and professional way.  
+The goal of this project is to serve as a personal branding platform and a central place where visitors can explore my projects and get in touch with me.
 
-- Profil singkat
-- Skill & tools
-- Project yang pernah dibuat
-- Pengalaman
-- Kontak
-
-Website ini dirancang dengan tampilan modern, clean, dan responsif, cocok untuk kebutuhan personal branding sebagai web developer.
+This portfolio is built with a focus on:
+- Clean and modern UI
+- Responsive design
+- Performance and simplicity
 
 ---
 
 ## 🚀 Tech Stack
 
-Project ini dibangun menggunakan:
+This project is built using modern web technologies:
 
-- **Next.js** – React framework
-- **TypeScript**
-- **Tailwind CSS** – Styling
-- **Vercel** – Deployment
+- **Next.js** – React framework for production
+- **TypeScript** – Type safety and maintainability
+- **Tailwind CSS** – Utility-first CSS framework
+- **Vercel** – Deployment and hosting
 
 ---
 
 ## ✨ Features
 
-- Responsive design (mobile & desktop)
-- Modern UI dengan Tailwind CSS
-- Fast performance dengan Next.js
-- Project showcase
+- Responsive design for all devices
+- Modern and minimal user interface
+- Project showcase section
+- Skills & tools section
+- Experience section
 - Contact section
-- Clean & minimal layout
+- Fast performance with Next.js App Router
 
 ---
 
 ## ⚙️ Getting Started
 
-Jalankan development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. Install dependencies:
+   ```bash
+   npm install

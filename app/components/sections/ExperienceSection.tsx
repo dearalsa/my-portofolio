@@ -29,8 +29,8 @@ const certificates = [
   },
   {
     title: 'Fundamental Front-end',
-    image: '/certificate/Fundamentalfrontend.jpg',
-    pdfFile: '/certificate/Fundamentalfrontend.pdf',
+    image: '/certificate/fundamental-frontend.jpg',
+    pdfFile: '/certificate/fundamental-frontend.pdf',
   },
   {
     title: 'Git dan GitHub',

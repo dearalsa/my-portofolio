@@ -24,8 +24,8 @@ const certificates = [
   },
   {
     title: 'Front-end Pemula',
-    image: '/certificate/FrontEndPemula.jpg',
-    pdfFile: '/certificate/FrontEndPemula.pdf',
+    image: '/certificate/FrontendPemula.jpg',
+    pdfFile: '/certificate/FrontendPemula.pdf',
   },
   {
     title: 'Fundamental Front-end',

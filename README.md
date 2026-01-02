@@ -1,3 +1,9 @@
+Siap 👍
+Ini versi **bahasa Inggris full**, **rapi**, dan **lebih profesional** (cocok untuk portfolio + recruiter). Tinggal **copy–paste** ke README.md kamu.
+
+---
+
+````md
 <h1 align="center">My Portfolio</h1>
 
 <p align="center">
@@ -51,3 +57,42 @@ To run this project locally, follow these steps:
 1. Install dependencies:
    ```bash
    npm install
+````
+
+2. Run the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+3. Open your browser and visit:
+
+   ```
+   http://localhost:3000
+   ```
+
+## 🚀 Deployment
+
+This project is deployed using **Vercel**.
+
+To deploy your own version:
+
+1. Push the project to GitHub
+2. Import the repository into Vercel
+3. Deploy with a single click 🚀
+
+---
+
+## 📄 License
+
+This project is open-source and available for learning, inspiration, and personal use.
+
+---
+
+⭐ If you like this project, feel free to give it a star!
